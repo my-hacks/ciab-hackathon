@@ -6,13 +6,15 @@ import { StatModule } from '../../shared';
 
 import { ProposesRoutingModule } from './proposes-routing.module';
 import { ProposesComponent } from './proposes.component';
+import { PageHeaderModule } from '../../shared';
 
 @NgModule({
     imports: [
         CommonModule,
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
-        ProposesRoutingModule
+        ProposesRoutingModule,
+        PageHeaderModule
     ],
     declarations: [
         ProposesComponent
