@@ -31,7 +31,7 @@
     <a class="btn btn-primary" type="button" value="procurar" (click)="pesquisar()"> Procurar </a>  
   </div>
 
-  <div class="col-4">
+  <div class="col-4 destacado">
     <div class="card card-default" *ngFor="let profissional of profissionais" style="margin-top: 10px;">
       <div class="card-header">
         <div class="headers">
@@ -52,7 +52,7 @@
     </div>
   </div>
 
-  <div class="col-4">
+  <div *ngIf="detalheSolicitado"class="col-4">
     <div class="card">
       <div class="card-body">
         <ul class="avatar" style=" list-style: none;">
@@ -60,25 +60,28 @@
             <span class="pull-left">
               <img src="../../../assets/images/I80W1Q0.png" alt="" class="avatar-img" height="50" width="50">
             </span>
-            <span class="style:margin-top: 10px;">Contador</span>
-            <div class="rating pull-right">
+            <span class="style:margin-top: 10px;">{{detalheProfissional.name}}</span>
+            <!--<div class="rating pull-right">
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star checked"></span>
-            </div>
+            </div>-->
             <br><br>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus adipisci unde ratione fuga dolore quia
+                {{detalheProfissional.description}}
             </p>
-            <p>
+            <!--<p>
               Serviços prestados : Controladoria, Fluxo de Caixa, Emissão de Nota
-            </p>
-            <p>Projetos a partir de : RS 300,00</p>
+            </p>-->
+            <div *ngFor="let service of detalheProfissional.services">
+              <strong>{{service.title}}</strong>
+              <p>Projetos a partir de : RS {{service.price}}</p>
+            </div>
             <div class="redes-sociais">
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i> <br>
-                <i class="fa fa-envelope" aria-hidden="true"></i> <br>
+                <i class="fa fa-linkedin-square" aria-hidden="true"> www.linkedin.com/fernando</i> <br>
+                <i class="fa fa-envelope" aria-hidden="true"> fernando.souza@gmail.com</i> <br>
                 <i class="fa fa-whatsapp" aria-hidden="true"></i>
             </div>
 
@@ -86,13 +89,13 @@
               <form action="" class="form">
                   <div class="form-group">
                     <label for="data">Data Entrega</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" name="dateDelivery" [(ngModel)]="dateDelivery">
                   </div>
                   <div class="form-group">
                     <label for="data">Mensagem</label>
-                    <input type="textarea" class="form-control">
+                    <textarea class="form-control" name="descricao" [(ngModel)]="descricao"></textarea>
                   </div>
-                  <button class="btn btn-warning pull-right">Enviar</button>
+                  <button class="btn btn-warning pull-right" (click)="enviarProposta()" >Enviar</button>
               </form>
             </div>
           </li>
@@ -102,7 +105,7 @@
    
   </div>
 
-  <div class="col-4">
+  <!--<div class="col-4">
     <div *ngIf="detalheSolicitado" id="detalhe_profissional">
         <img src="" alt="FOTO_PERFIL" class="" style="width:100px;height:86px;background:#3f51b569;display:flex">
 
@@ -115,7 +118,7 @@
         <textarea name="descricao" id="descricao" [(ngModel)]="descricao" cols="40" rows="5"></textarea>
         <input type="button" value="Enviar Proposta" (click)="enviarProposta()">
     </div>
-  </div>
+  </div>-->
 
 </div>
 
