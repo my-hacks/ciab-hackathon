@@ -9,4 +9,7 @@ export class ProposesComponent implements OnInit {
     constructor() { }
 
     ngOnInit(): void { }
+
+    // tslint:disable-next-line:member-ordering
+    heading = 'Propostas';
 }
