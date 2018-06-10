@@ -1,34 +1,68 @@
-<p>
-  empresa works!
+<div id="servicos" style="float:left">
 
-  <ngx-datatable
-          style="width: 90%"
-          class="material"
-          [rows]="rows"
-          [columnMode]="'force'"
-          [headerHeight]="50"
-          [footerHeight]="50"
-          [rowHeight]="'auto'"
-          [limit]="5"
-          [selected]="selected"
-          [selectionType]="'checkbox'"
-          [selectAllRowsOnPage]="false"
-          [displayCheck]="displayCheck"
-          (activate)="onActivate($event)"
-          (select)='onSelect($event)'>
-          <ngx-datatable-column
-            [width]="30"
-            [sortable]="false"
-            [canAutoResize]="false"
-            [draggable]="false"
-            [resizeable]="false"
-            [headerCheckboxable]="true"
-            [checkboxable]="true">
-          </ngx-datatable-column>
-          <ngx-datatable-column name="Name"></ngx-datatable-column>
-          <ngx-datatable-column name="Gender"></ngx-datatable-column>
-          <ngx-datatable-column name="Company"></ngx-datatable-column>
-        </ngx-datatable>
+  <p>
+    empresa works!
 
+    <ngx-datatable id="teste"
+      style="width: 100%"
+      class="table table-striped table-bordered"
+      [rows]="rows"
+      [columnMode]="'force'"
+      [headerHeight]="50"
+      [footerHeight]="50"
+      [rowHeight]="'auto'"
+      [limit]="5"
+      [selected]="selected"
+      [selectionType]="'checkbox'"
+      [selectAllRowsOnPage]="false"
+      [displayCheck]="displayCheck"
+      (activate)="onActivate($event)"
+      (select)='onSelect($event)'>
+      <ngx-datatable-column 
+        [width]="30"
+        [sortable]="false"
+        [canAutoResize]="false"
+        [draggable]="false"
+        [resizeable]="false"
+        [headerCheckboxable]="true"
+        [checkboxable]="true">
+      </ngx-datatable-column>
+      <ngx-datatable-column name="title"></ngx-datatable-column>
+    </ngx-datatable>
+
+    
+  </p>
+
+  <input type="button" value="procurar" (click)="pesquisar()"/>  
+</div>
+
+
+
+<div *ngIf="pesquisaFinalizada" id="profissionais" style="float:left">
+
+<ul>
+  <li *ngFor="let profissional of profissionais" >
+    <div style="border:1px solid" (click)="mostraDetalheProfissional(profissional)">
+      {{profissional.nome}}
+    </div>
+  </li>
+</ul>
+
+</div>
+
+<div *ngIf="detalheSolicitado" id="detalhe_profissional" style="float:left">
+  <div>
+    <img src="" alt="FOTO_PERFIL" class="" style="width:100px;height:86px;background:#3f51b569;display:flex">
+
+    <pre>
+      <strong>{{detalheProfissional.nome}}</strong>
+      <strong>{{detalheProfissional.end}}</strong>
+      <ul>
+        <li *ngFor="let skill of detalheProfissional.skills">
+          {{skill}}
+        </li>
+      </ul>
+    </pre>
+  </div>
   
-</p>
+</div>

@@ -1,0 +1,28 @@
+[
+
+    {
+     "nome" : "Jairo Iglesias",
+     "end" : "Rua Capitao Macedo, 42 - Vila Clementino",
+     "skills": [
+         "Fluxo de Caixa",
+         "Conciliacao Bancaria"
+     ]   
+    },
+    {
+     "nome" : "Emerson Silva",
+     "end" : "Rua da Nygga, 666 - PauNoCuDeQuemOuviu",
+     "skills": [
+         "Nygga",
+         "Xingar",
+         "Porra Nenhuma"
+     ]   
+    },
+    {
+     "nome" : "Erick Wendel",
+     "skills": [
+         "Kraken",
+         "E ae galera"
+     ]   
+    }
+
+]
