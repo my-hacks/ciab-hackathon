@@ -10,7 +10,6 @@ const routes: Routes = [
             { path: '', redirectTo: 'dashboard' },
             { path: 'empresa', loadChildren: './empresa/empresa.module#EmpresaModule'},
             { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-            { path: 'dashboard2', loadChildren: './dashboard2/dashboard2.module#DashboardModule2' },
             { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
             { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
             { path: 'forms', loadChildren: './form/form.module#FormModule' },
