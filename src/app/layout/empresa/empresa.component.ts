@@ -66,10 +66,10 @@ export class EmpresaComponent implements OnInit {
       let persons:Array<JSON> = []
       let foundSkills:number = 0
 
-      data.forEach((personValue, personIndex) => {
+      data.forEach((personValue:any, personIndex:any) => {
 
         this.selected.forEach((servicoSelectValue, servicoSelectIndex) => {
-
+          
           personValue.services.forEach((serviceValue, serviceIndex) => {
 
             if(servicoSelectValue.title == serviceValue.title){
