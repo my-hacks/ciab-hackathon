@@ -13,6 +13,37 @@
         margin-left:30px;
     }
 
-    #table * {
-        background: green !important
+    #table {
+        border: 1px solid lightgray !important;
+        padding: 10px;
+        border-radius: 15px;
+        border-color: lightgray;
+        tr {
+            border-bottom-color: black !important;
+        }
     }
+
+    .headers {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul.avatar {
+        padding-left: 0;
+    }
+
+    .left .clearfix {
+        margin-bottom: 10px;
+        margin-right: 15px;
+        padding-bottom: 5px;
+        border-bottom: 1px dotted #999;
+    }
+
+    .avatar-img {
+        margin-right: 20px ;
+    }
+
+    .fa-star {
+        color: yellow;
+    }
+

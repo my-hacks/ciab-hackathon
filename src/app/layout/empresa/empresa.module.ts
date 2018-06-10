@@ -5,10 +5,11 @@ import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { EmpresaRoutingModule } from './empresa-routing.module';
 import { EmpresaComponent } from './empresa.component';
 
-import { StatModule } from '../../shared';
+import { StatModule, PageHeaderModule } from '../../shared';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule } from "@angular/forms";
+import { BsComponentModule } from '../bs-component/bs-component.module';
 
 @NgModule({
     imports: [
@@ -18,6 +19,8 @@ import { FormsModule } from "@angular/forms";
         EmpresaRoutingModule,
         StatModule,
         NgxDatatableModule,
+        PageHeaderModule,
+        BsComponentModule,
         ToastrModule.forRoot({
             positionClass: 'toast-bottom-right'
         }),
