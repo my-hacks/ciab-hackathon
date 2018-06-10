@@ -1,0 +1,19 @@
+.status {
+    padding: 5px;
+    display: flex;
+    justify-content: flex-end;
+    .fa-comment  {
+        float: right;
+    }
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    .nome-empresa {
+        float: left;
+    }
+    .data-entrega {
+        text-align: right;
+    }
+}
