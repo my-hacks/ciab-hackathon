@@ -4,6 +4,7 @@ $topnav-background-color: #222;
 }
 .login-page {
     position: absolute;
+    display: flex;
     top: 0;
     left: 0;
     right: 0;
@@ -12,7 +13,39 @@ $topnav-background-color: #222;
     background: $topnav-background-color;
     text-align: center;
     color: #fff;
-    padding: 3em;
+
+    .left {
+        width: 50%;
+        height: 100vh;
+        background-image: url('../../assets/images/empreendedor.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .btn-login, .second {
+            width: 180px;
+            border-radius: 30px;
+        }
+        .second {
+            background-color: orange;
+        }
+    }
+    .right {
+        width: 50%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
     .col-lg-4 {
         padding: 0;
     }
@@ -92,4 +125,8 @@ $topnav-background-color: #222;
         border-radius: 50%;
         border: 2px solid #fff;
     }
+}
+
+.form-content {
+    width: 50vh;
 }
