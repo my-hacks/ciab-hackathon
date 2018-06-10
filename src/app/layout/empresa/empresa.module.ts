@@ -7,6 +7,8 @@ import { EmpresaComponent } from './empresa.component';
 
 import { StatModule } from '../../shared';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     imports: [
@@ -15,7 +17,11 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
         NgbAlertModule.forRoot(),
         EmpresaRoutingModule,
         StatModule,
-        NgxDatatableModule
+        NgxDatatableModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-bottom-right'
+        }),
+        FormsModule
     ],
     declarations: [
         EmpresaComponent
