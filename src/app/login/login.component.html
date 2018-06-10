@@ -1,8 +1,8 @@
 <div class="login-page" [@routerTransition]>
     <div class="left">
-        <button class="btn btn-primary btn-login"> Quero Gerir </button>
+        <button class="btn btn-primary btn-login" [routerLink]="['/dashboard2']"> Quero Gerir </button>
         <br>
-        <button class="btn btn-primary second"> Quero ser gerido </button>
+        <button class="btn btn-primary second" [routerLink]="['/dashboard']" (click)="onLoggedin()"> Quero ser gerido </button>
     </div>
     <div class="right">
         <div class="row justify-content-md-center">
@@ -11,16 +11,14 @@
                     <div class="form-group">
                         <input type="text" ng-model="name" class="form-control input-underline input-lg" id="" placeholder="Email">
                     </div>
-
                     <div class="form-group">
                         <input type="password" class="form-control input-underline input-lg" id="" placeholder="Password">
                     </div>
                 </div>
-                <a class="btn rounded-btn" [routerLink]="['/dashboard']" (click)="onLoggedin()"> Log in </a>
+                <a class="btn rounded-btn"> Log in </a>
                 &nbsp;
                 <a class="btn rounded-btn" [routerLink]="['/signup']">Register</a>
             </form>
-
         </div>
     </div>
 </div>
