@@ -1,3 +1,4 @@
+import { FormModule } from './../../layout/form/form.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
@@ -14,7 +15,8 @@ import { PageHeaderModule } from '../../shared';
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
         ProposesRoutingModule,
-        PageHeaderModule
+        PageHeaderModule,
+        FormModule
     ],
     declarations: [
         ProposesComponent
