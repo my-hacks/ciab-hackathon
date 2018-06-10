@@ -1,23 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbCarouselModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
-
-import { StatModule } from '../../shared';
-
-import { ProposesRoutingModule } from './proposes-routing.module';
-import { ProposesComponent } from './proposes.component';
 import { PageHeaderModule } from '../../shared';
+import { WorksComponent } from './works.component';
+import { WorksRoutingModule } from '../works/works.routing.module';
+import { BsComponentModule } from '../../layout/bs-component/bs-component.module';
 
 @NgModule({
     imports: [
         CommonModule,
         NgbCarouselModule.forRoot(),
         NgbAlertModule.forRoot(),
-        ProposesRoutingModule,
-        PageHeaderModule
+        PageHeaderModule,
+        WorksRoutingModule,
+        BsComponentModule
     ],
     declarations: [
-        ProposesComponent
+        WorksComponent
     ]
 })
-export class ProposesModule { }
+export class WorksModule { }

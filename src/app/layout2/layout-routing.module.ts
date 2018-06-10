@@ -9,7 +9,8 @@ const routes: Routes = [
         children: [
             { path: '', redirectTo: 'dashboard' },
             { path: 'dashboard', loadChildren: './dashboard2/dashboard.module#DashboardModule' },
-            { path: 'proposes', loadChildren: './proposes/proposes.module#ProposesModule' }
+            { path: 'proposes', loadChildren: './proposes/proposes.module#ProposesModule' },
+            { path: 'works', loadChildren: './works/works.module#WorksModule' }
         ]
     }
 ];
