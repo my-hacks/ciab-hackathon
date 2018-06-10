@@ -1,11 +1,10 @@
-<div id="servicos" style="float:left">
 
-  <p>
-    empresa works!
+<app-page-header [heading]="'Trabalhos'" [icon]="'fa-th-list'"></app-page-header>
 
-    <ngx-datatable id="teste"
+<div class="row">
+  <div class="col-4">
+      <ngx-datatable id="table"
       style="width: 100%"
-      class="table table-striped table-bordered"
       [rows]="rows"
       [columnMode]="'force'"
       [headerHeight]="50"
@@ -28,41 +27,98 @@
       </ngx-datatable-column>
       <ngx-datatable-column name="title"></ngx-datatable-column>
     </ngx-datatable>
-
-    
-  </p>
-
-  <input type="button" value="procurar" (click)="pesquisar()"/>  
-</div>
-
-<div *ngIf="pesquisaFinalizada" id="profissionais" style="float:left">
-
-<ul>
-  <li *ngFor="let profissional of profissionais" >
-    <div style="border:1px solid" (click)="mostraDetalheProfissional(profissional)">
-       <strong>{{profissional.name}}</strong><br>
-      <span>{{profissional.description}}</span>
-    </div>
-  </li>
-</ul>
-
-</div>
-
-<div *ngIf="detalheSolicitado" id="detalhe_profissional" style="float:left">
-  <div>
-    <img src="" alt="FOTO_PERFIL" class="" style="width:100px;height:86px;background:#3f51b569;display:flex">
-
-    <pre>
-      <strong>{{detalheProfissional | json}}</strong>
-    </pre>
-
-    <input type="date" name="data_entrega" [(ngModel)]="dateDelivery" />
     <br>
-    <textarea name="descricao" id="descricao" [(ngModel)]="descricao" cols="40" rows="5"></textarea>
-    <input type="button" value="Enviar Proposta" (click)="enviarProposta()">
-
+    <a class="btn btn-primary" type="button" value="procurar" (click)="pesquisar()"> Procurar </a>  
   </div>
-  
+
+  <div class="col-4">
+    <div class="card card-default" *ngFor="let profissional of profissionais" style="margin-top: 10px;">
+      <div class="card-header">
+        <div class="headers">
+            {{profissional.name}}
+            <small>Profissao</small>
+            <div class="rating">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+            </div>
+        </div>
+      </div>
+      <div class="card-body" (click)="mostraDetalheProfissional(profissional)">
+        {{profissional.description}}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+        <ul class="avatar" style=" list-style: none;">
+          <li class="left clearfix">
+            <span class="pull-left">
+              <img src="../../../assets/images/I80W1Q0.png" alt="" class="avatar-img" height="50" width="50">
+            </span>
+            <span class="style:margin-top: 10px;">Contador</span>
+            <div class="rating pull-right">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+            </div>
+            <br><br>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus adipisci unde ratione fuga dolore quia
+            </p>
+            <p>
+              Serviços prestados : Controladoria, Fluxo de Caixa, Emissão de Nota
+            </p>
+            <p>Projetos a partir de : RS 300,00</p>
+            <div class="redes-sociais">
+                <i class="fa fa-linkedin-square" aria-hidden="true"></i> <br>
+                <i class="fa fa-envelope" aria-hidden="true"></i> <br>
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+            </div>
+
+            <div>
+              <form action="" class="form">
+                  <div class="form-group">
+                    <label for="data">Data Entrega</label>
+                    <input type="date" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label for="data">Mensagem</label>
+                    <input type="textarea" class="form-control">
+                  </div>
+                  <button class="btn btn-warning pull-right">Enviar</button>
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+   
+  </div>
+
+  <div class="col-4">
+    <div *ngIf="detalheSolicitado" id="detalhe_profissional">
+        <img src="" alt="FOTO_PERFIL" class="" style="width:100px;height:86px;background:#3f51b569;display:flex">
+
+        <pre>
+          <strong>{{detalheProfissional | json}}</strong>
+        </pre>
+    
+        <input type="date" name="data_entrega" [(ngModel)]="dateDelivery" />
+        <br>
+        <textarea name="descricao" id="descricao" [(ngModel)]="descricao" cols="40" rows="5"></textarea>
+        <input type="button" value="Enviar Proposta" (click)="enviarProposta()">
+    </div>
+  </div>
+
 </div>
+
+
 
 
