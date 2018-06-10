@@ -16,7 +16,6 @@
       [selectionType]="'checkbox'"
       [selectAllRowsOnPage]="false"
       [displayCheck]="displayCheck"
-      (activate)="onActivate($event)"
       (select)='onSelect($event)'>
       <ngx-datatable-column 
         [width]="30"
@@ -36,14 +35,13 @@
   <input type="button" value="procurar" (click)="pesquisar()"/>  
 </div>
 
-
-
 <div *ngIf="pesquisaFinalizada" id="profissionais" style="float:left">
 
 <ul>
   <li *ngFor="let profissional of profissionais" >
     <div style="border:1px solid" (click)="mostraDetalheProfissional(profissional)">
-      {{profissional.nome}}
+       <strong>{{profissional.name}}</strong><br>
+      <span>{{profissional.description}}</span>
     </div>
   </li>
 </ul>
@@ -55,14 +53,16 @@
     <img src="" alt="FOTO_PERFIL" class="" style="width:100px;height:86px;background:#3f51b569;display:flex">
 
     <pre>
-      <strong>{{detalheProfissional.nome}}</strong>
-      <strong>{{detalheProfissional.end}}</strong>
-      <ul>
-        <li *ngFor="let skill of detalheProfissional.skills">
-          {{skill}}
-        </li>
-      </ul>
+      <strong>{{detalheProfissional | json}}</strong>
     </pre>
+
+    <input type="date" name="data_entrega" [(ngModel)]="dateDelivery" />
+    <br>
+    <textarea name="descricao" id="descricao" [(ngModel)]="descricao" cols="40" rows="5"></textarea>
+    <input type="button" value="Enviar Proposta" (click)="enviarProposta()">
+
   </div>
   
 </div>
+
+
