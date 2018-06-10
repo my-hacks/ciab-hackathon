@@ -8,15 +8,15 @@ const routes: Routes = [
         component: LayoutComponent,
         children: [
             { path: '', redirectTo: 'dashboard' },
-            { path: 'empresa', loadChildren: './empresa/empresa.module#EmpresaModule'},
-            { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-            { path: 'charts', loadChildren: './charts/charts.module#ChartsModule' },
-            { path: 'tables', loadChildren: './tables/tables.module#TablesModule' },
-            { path: 'forms', loadChildren: './form/form.module#FormModule' },
-            { path: 'bs-element', loadChildren: './bs-element/bs-element.module#BsElementModule' },
-            { path: 'grid', loadChildren: './grid/grid.module#GridModule' },
-            { path: 'components', loadChildren: './bs-component/bs-component.module#BsComponentModule' },
-            { path: 'blank-page', loadChildren: './blank-page/blank-page.module#BlankPageModule' }
+            { path: 'empresa', loadChildren: './empresa2/empresa.module#EmpresaModule'},
+            { path: 'dashboard', loadChildren: './dashboard2/dashboard.module#DashboardModule' },
+            { path: 'charts', loadChildren: './charts2/charts.module#ChartsModule' },
+            { path: 'tables', loadChildren: './tables2/tables.module#TablesModule' },
+            { path: 'forms', loadChildren: './form2/form.module#FormModule' },
+            { path: 'bs-element', loadChildren: './bs-element2/bs-element.module#BsElementModule' },
+            { path: 'grid', loadChildren: './grid2/grid.module#GridModule' },
+            { path: 'components', loadChildren: './bs-component2/bs-component.module#BsComponentModule' },
+            { path: 'blank-page', loadChildren: './blank-page2/blank-page.module#BlankPageModule' }
         ]
     }
 ];
