@@ -69,15 +69,18 @@ export class EmpresaComponent implements OnInit {
       data.forEach((personValue:any, personIndex:any) => {
 
         this.selected.forEach((servicoSelectValue, servicoSelectIndex) => {
+
+          if(personValue.services != null){
+
+            personValue.services.forEach((serviceValue, serviceIndex) => {
+
+              if(servicoSelectValue.title == serviceValue.title){
+                foundSkills++
+              }
+
+            })
+          }
           
-          personValue.services.forEach((serviceValue, serviceIndex) => {
-
-            if(servicoSelectValue.title == serviceValue.title){
-              foundSkills++
-            }
-
-          })
-
         })
 
         if(foundSkills == this.selected.length){
@@ -104,7 +107,7 @@ export class EmpresaComponent implements OnInit {
 
   enviarProposta(){
 
-    this.toastr.success('Proposta Analisada!', this.descricao);
+    this.toastr.success('Proposta Enviada!', this.descricao);
 
     let superFuckerJSON = {
       id_provider: this.detalheProfissional.id,
@@ -112,10 +115,12 @@ export class EmpresaComponent implements OnInit {
       date_delivery: this.dateDelivery
     }
 
+    console.log("*************************")
+    console.log(superFuckerJSON)
+    console.log("*************************")
+
     this.http.post("https://api.gesta.me/v1/order", superFuckerJSON).subscribe((data) => {
 
-      console.log("enviarProposta")
-      console.log(data)
 
     })
 

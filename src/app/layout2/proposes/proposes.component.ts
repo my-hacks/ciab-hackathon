@@ -23,7 +23,7 @@ export class ProposesComponent implements OnInit {
     heading = 'Propostas';
 
     recuperaPropostas(){
-
+        
         this.http.get("https://api.gesta.me/v1/order").subscribe((data:Array<JSON>) => {
             this.propostas = data
         })

@@ -47,3 +47,8 @@
         color: yellow;
     }
 
+    .destacado {
+        &:hover{
+            cursor:pointer;
+        }
+    }
