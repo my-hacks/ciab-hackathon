@@ -16,7 +16,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
         EmpresaRoutingModule,
         StatModule,
         NgxDatatableModule
-        
     ],
     declarations: [
         EmpresaComponent
