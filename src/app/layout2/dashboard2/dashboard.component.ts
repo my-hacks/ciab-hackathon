@@ -11,6 +11,16 @@ export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
 
+    // Pie
+    public pieChartLabels: string[] = [
+        'Download Sales',
+        'In-Store Sales',
+        'Mail Sales'
+    ];
+    public pieChartData: number[] = [300, 500, 100];
+    public pieChartType = 'pie';
+
+
     constructor() {
         this.sliders.push(
             {
