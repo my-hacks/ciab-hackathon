@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from '../../router.animations';
+import { HttpClient } from "@angular/common/http";
 
 @Component({
   selector: 'app-empresa',
@@ -15,22 +16,19 @@ export class EmpresaComponent implements OnInit {
   rows = [];
   selected = [];
 
-  constructor() {
-    this.fetch((data) => {
+  pesquisaFinalizada:boolean = false
+  profissionais:Array<JSON>
+  detalheSolicitado:boolean = false
+  detalheProfissional:any
+
+  urlRoot:string = "assets/data/"
+
+  constructor(private http: HttpClient) {
+
+    this.http.get("https://api.gesta.me/v1/service").subscribe((data:any) => {
       this.rows = data;
-    });
-  }
+    })
 
-  fetch(cb) {
-    const req = new XMLHttpRequest();
-    req.open('GET', `assets/data/company.json`);
-
-    req.onload = () => {
-     
-      cb(JSON.parse(req.response));
-    };
-
-    req.send();
   }
 
   onSelect({ selected }) {
@@ -58,6 +56,28 @@ export class EmpresaComponent implements OnInit {
 
   displayCheck(row) {
     return row.name !== 'Ethel Price';
+  }
+
+  pesquisar(){
+
+    this.pesquisaFinalizada = true
+
+    let url:string = this.urlRoot + "profissionais.json"
+
+    this.http.get(url, {}).subscribe((data:Array<JSON>) => {
+
+      console.log(data)
+      this.profissionais = data
+
+    })
+
+  }
+
+  mostraDetalheProfissional(profissional){
+
+    this.detalheSolicitado = true
+    this.detalheProfissional = profissional
+
   }
 
 }
