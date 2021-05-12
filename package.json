@@ -26,7 +26,7 @@
         "@ngx-translate/core": "^10.0.1",
         "@ngx-translate/http-loader": "^3.0.1",
         "@swimlane/ngx-datatable": "^13.0.1",
-        "chart.js": "^2.7.2",
+        "chart.js": "^2.9.4",
         "core-js": "^2.5.5",
         "font-awesome": "^4.7.0",
         "ng2-alert-center": "^0.5.1",
